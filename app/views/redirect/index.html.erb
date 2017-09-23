@@ -1,0 +1,11 @@
+<h1>New Redirect!</h1>
+<%= form_tag "/redirects", method: :post do %>
+  <div>
+    Url: <input type="text" name="url">
+  </div>
+  <div>
+    Shortened: <% value = ""; 5.times{value << ((rand(2)==1?65:97) + rand(25)).chr} %>
+    <input type="text" maxlength="5" value="<%=value%>" name="shortened">
+  </div>
+  <input type="submit" value="Create Shortcut">
+<% end %>
